@@ -11,4 +11,4 @@ for number in phone_number:
     print(dic2.get(number))
     print(dic2[number])
 
-print (f"Rachel is the best!wawawa")
+print (f"Rachel is the best!")
