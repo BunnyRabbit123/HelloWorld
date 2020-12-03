@@ -1,3 +1,3 @@
 # HelloWorld
 # Savings MVP
-# .NET MSI Component Git Repo Commit
+# .NET MSI Component Git Repo Commit.
