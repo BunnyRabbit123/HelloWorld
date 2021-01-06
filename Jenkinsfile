@@ -12,15 +12,20 @@ pipeline {
                 echo 'Testing..'
             }
         }
-        stage('Deploy to Dev Server') {
+        stage('Deploy to Dev Integration Server') {
             steps {
                 echo 'Deploying....'
+            }
+        }
+        stage('Dev Integration Test') {
+            steps {
+                echo 'Testing....'
             }
         }
     }
     post {
     success {
-      googleStorageBuildLogUpload bucket: 'gs://artifacts.optical-forest-295616.appspot.com/JenkinsArtifacts', credentialsId: 'Release Orchestration', logName: 'build-log.txt'
+      googleStorageBuildLogUpload bucket: 'gs://artifacts.optical-forest-295616.appspot.com/JenkinsArtifacts', credentialsId: 'Release Orchestration', logName: 'build-log.txt' + env.BRANCH_NAME
     }
   }
 }
