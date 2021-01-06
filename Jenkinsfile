@@ -25,7 +25,7 @@ pipeline {
     }
     post {
     success {
-      googleStorageBuildLogUpload bucket: 'gs://artifacts.optical-forest-295616.appspot.com/JenkinsArtifacts', credentialsId: 'Release Orchestration', logName: 'build-log.txt' + env.BRANCH_NAME
+      googleStorageBuildLogUpload bucket: 'gs://artifacts.optical-forest-295616.appspot.com/JenkinsArtifacts', credentialsId: 'Release Orchestration', logName: 'build-log.txt' + ${BRANCH}
     }
   }
 }
